@@ -13,6 +13,11 @@ def keyboard(request):
 
 @csrf_exempt
 def message(request):
+    if request.method == 'POST':
+        print("request is POST")
+    else:
+        print("request is not POST")
+        
     return JsonResponse({
         'message':{
             'text':'Working well'
